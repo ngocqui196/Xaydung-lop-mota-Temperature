@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+
+<script>
+
+    function Temperature() {
+        let celcius = document.getElementById("cc")
+        this.celcius = celcius;
+        this.getCMoveF = function () {
+            return(this.celcius - 32) / 1.8;
+        }
+        this.getCMoveK = function () {
+            return this.celcius + 273.15
+        }
+    }
+    let nhietdo = new Temperature(25)
+    document.write("25°C sẽ bằng " + nhietdo.getCMoveF() + "°F và " + nhietdo.getCMoveK() + "°K");
+
+</script>
+</body>
+</html>
