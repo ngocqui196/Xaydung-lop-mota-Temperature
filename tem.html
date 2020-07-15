@@ -5,21 +5,25 @@
     <title>Xây dựng lớp mô tả Temperature</title>
 </head>
 <body>
-
+<input type="number" id="num" oninput="chuyenNhiet(this.value)">
+<p id="output"></p>
 <script>
 
-    function Temperature() {
-        let celcius = document.getElementById("cc")
+    function Temperature(celcius) {
         this.celcius = celcius;
         this.getCMoveF = function () {
             return(this.celcius - 32) / 1.8;
-        }
+        };
         this.getCMoveK = function () {
             return this.celcius + 273.15
         }
     }
-    let nhietdo = new Temperature(25)
-    document.write("25°C sẽ bằng " + nhietdo.getCMoveF() + "°F và " + nhietdo.getCMoveK() + "°K");
+
+    function chuyenNhiet (temperatue) {
+        temperatue = new Temperature(temperatue);
+        document.getElementById("output").innerHTML =  temperatue.celcius + " độ sẽ bằng " + temperatue.getCMoveF() + "°F và " + temperatue.getCMoveK() + "°K";
+    }
+
 
 </script>
 </body>
